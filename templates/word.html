@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div>
+        <h4 align="left">
+            <blockquote>{{ results.word | title }}</blockquote>
+        </h4>
+        <p style="font-size: 22px;"><b>Meaning: </b> {{ results.meaning | capfirst }}</p>
+        <p style="font-size: 18px">
+            <b style="margin: 5px">Synonym: </b>
+            {% for item in results.synonym %}
+                <a href="word?word={{ item }}">{{ item | title}} | </a>
+            {% endfor %}
+        </p>
+
+        <p style="font-size: 18px">
+            <b style="margin: 5px">Antonym: </b>
+            {% for item in results.antonym %}
+            <a href="word?word={{ item }}">{{ item | title}} | </a>
+            {% endfor %}
+        </p>
+
+    </div>
+{% endblock %}

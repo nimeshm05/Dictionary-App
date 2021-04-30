@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block wod %}
+
+<div style="margin: 50px auto">
+    <h3 align="center">Phrase of the Day</h3>
+    <blockquote>
+        <h4 style="margin: 50px auto;">{{ results.phraseOfTheDay | title}}</h4>
+    </blockquote>
+    <p style="font-size: 22px;"><b>Meaning: </b>{{ results.meaningOfPOD | capfirst }}</p>
+    <p style="font-size: 22px"><b>Example: </b>{{ results.exampleString | capfirst }}</p>
+</div>
+
+{% endblock %}

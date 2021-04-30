@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Dictionary App{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        #row {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        #blockElement {
+            margin: 50px auto;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Dictionary Web App</a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin: 3em auto">
+        <div class="row center" id="heading">
+            <div class="col s6" id="headingColumn">
+                <blockquote>
+                    <p style="font-size: 28px; align: left;">
+                        <a href="/wod" style="color: teal; text-decoration: none;">Word of the Day</a>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="col s6" id="headingColumn">
+                <blockquote>
+                    <p style="font-size: 28px; align: right">
+                        <a href="/pod" style="color: teal; text-decoration: none;">Phrase of the Day</a>
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="row">
+        <div class="center row">
+            <form action="word">
+                <div class="input-field col s8" id="searchBar">
+                    <input id="last_name" type="text" class="validate" name="word">
+                    <label for="last_name">Search word</label>
+                </div>
+
+                <div class="col s4">
+                    <button class="btn waves-effect waves-light btn-large" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container" id="blockElement">
+        {% block content%}
+        {% endblock %}
+    </div>
+
+    <div class="container" id="blockElement">
+        {% block wod %}
+        {% endblock %}
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
